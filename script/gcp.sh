@@ -23,7 +23,7 @@ function deploy_lm-logs {
 	gcloud compute firewall-rules create ${FIREWALL_RULE} \
     --network ${VPC_NAME} \
     --allow tcp:22 \
-    --source-ranges 35.235.240.0/20 \
+    --source-ranges INTERNAL, CLOUD_LOAD_BALANCING \
     --target-tags allow-ssh
 
 	echo "Creating subnet"
